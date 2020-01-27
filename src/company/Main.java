@@ -40,10 +40,58 @@ public class Main {
         campus.addPath("CES","Rock",2);
         campus.showPath("Chapel");
         campus.showPath("Alums");
-        campus.randomLength();//This function randomize all paths available on the current map to integer distances between 1 to 10 inclusive.
+        /*campus.randomLength();//This function randomize all paths available on the current map to integer distances between 1 to 10 inclusive.
         campus.showPath("Chapel");
-        campus.showPath("Alums");
+        campus.showPath("Alums");*/
 
+        MinHeap k = new MinHeap();
+        for(int i = 0; i<10;i++){
+            k.insert(new MNode(i,i+1,10-i));
+        }
+       System.out.println(k.root.getLength());
+        System.out.println(k.root.getLeft().getLength());
+        System.out.println(k.root.getRight().getLength());
+        System.out.println(k.root.getLeft().getLeft().getLength());
+        System.out.println(k.root.getRight().getLeft().getLength());
+        k.getMin();
+        k.extractMin();
+        System.out.println(k.root.getLength());
+        System.out.println(k.root.getLeft().getLength());
+        System.out.println(k.root.getRight().getLength());
+        System.out.println(k.root.getLeft().getLeft().getLength());
+        System.out.println(k.root.getRight().getLeft().getLength());
+        k.remove(k.root.getLeft());
+        System.out.println(k.root.getLength());
+        System.out.println(k.root.getLeft().getLength());
+        System.out.println(k.root.getRight().getLength());
+        System.out.println(k.root.getLeft().getLeft().getLength());
+        System.out.println(k.root.getRight().getLeft().getLength());
+
+        MaxHeap j = new MaxHeap();
+        for(int i = 0; i<10;i++){
+            j.insert(new MNode(i,i+1,i+1));
+        }
+        System.out.println(j.root.getLength());
+        System.out.println(j.root.getLeft().getLength());
+        System.out.println(j.root.getRight().getLength());
+        System.out.println(j.root.getLeft().getLeft().getLength());
+        System.out.println(j.root.getRight().getLeft().getLength());
+        j.getMax();
+        j.extractMax();
+        System.out.println(j.root.getLength());
+        System.out.println(j.root.getLeft().getLength());
+        System.out.println(j.root.getRight().getLength());
+        System.out.println(j.root.getLeft().getLeft().getLength());
+        System.out.println(j.root.getRight().getLeft().getLength());
+        j.remove(j.root.getLeft());
+        System.out.println(j.root.getLength());
+        System.out.println(j.root.getLeft().getLength());
+        System.out.println(j.root.getRight().getLength());
+        System.out.println(j.root.getLeft().getLeft().getLength());
+        System.out.println(j.root.getRight().getLeft().getLength());
+
+        Dijkstra Wednesday = new Dijkstra("CES", "Chapel", campus);
+        Dijkstra Lunch = new Dijkstra("US", "MGH",campus);
 
 
 

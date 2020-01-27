@@ -4,7 +4,6 @@ public class MyLinkedList {
     Node head;
 
     public MyLinkedList(){
-
     }
     public boolean add(Node n){
         return addN(n,head);
@@ -130,6 +129,5 @@ public class MyLinkedList {
         }
         return pointer;
     }
-
 
 }

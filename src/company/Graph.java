@@ -84,4 +84,10 @@ public class Graph {
             }
         }
     }
+    public MyLinkedList getConnections(int i){
+        return graph[i];
+    }
+    public int getVertices(){
+        return Vertices;
+    }
 }

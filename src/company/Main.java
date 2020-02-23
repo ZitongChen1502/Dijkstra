@@ -42,8 +42,24 @@ public class Main {
         campus.showPath("Alums");
         /*campus.randomLength();//This function randomize all paths available on the current map to integer distances between 1 to 10 inclusive.
         campus.showPath("Chapel");
-        campus.showPath("Alums");*/
-
+        campus.showPath("Alums");*
+         */
+        Astar astar = new Astar(campus);
+        astar.setLocation(0,0,0);
+        astar.setLocation(1,1,1);
+        astar.setLocation(2,1,2);
+        astar.setLocation(3,0,2);
+        astar.setLocation(4,-1,1);
+        astar.setLocation(5,1,3);
+        astar.setLocation(6,2,4);
+        astar.setLocation(7,5,4);
+        astar.setLocation(8,6,2);
+        astar.setLocation(9,6,0);
+        astar.setLocation(10,5,0);
+        astar.setLocation(11,4,0);
+        astar.setLocation(12,2,1);
+        astar.setLocation(13,1,0);
+        /*
         MinHeap k = new MinHeap();
         for(int i = 0; i<10;i++){
             k.insert(new MNode(i,i+1,10-i));
@@ -89,10 +105,15 @@ public class Main {
         System.out.println(j.root.getRight().getLength());
         System.out.println(j.root.getLeft().getLeft().getLength());
         System.out.println(j.root.getRight().getLeft().getLength());
-
+        */
+        System.out.println("This is Dijkstra:");
         Dijkstra Wednesday = new Dijkstra("CES", "Chapel", campus);
+        System.out.println("This is A star:");
+        astar.runAstar("CES", "Chapel");
+        System.out.println("This is Dijkstra:");
         Dijkstra Lunch = new Dijkstra("US", "MGH",campus);
-
+        System.out.println("This is A star:");
+        astar.runAstar("US", "MGH");
 
 
 
